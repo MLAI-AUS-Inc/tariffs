@@ -36,7 +36,7 @@ After the initial data-re issue it was discovered that the temp_air column was n
 ![](imgs/pv_power_vs_opennem.png)
 
 **PV Power vs all other solcast data**:
-![](imgs/pv_power_vs_solcast.png)
+![](imgs/pv_power_vs_other_pv.png)
 
 Note that the solar peaks are always just after midnight, UTC, which means around midday in UTC+10.
 
