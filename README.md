@@ -28,6 +28,18 @@ The new datasets contain a subset of the columns in the old `bot/data/training_d
 
 You can use `plot.py` to view this data. We recommend you use the new data to train your models as it is properly aligned, but the choice is down to the individual participants.
 
+### Data Update
+
+After the initial data-re issue it was discovered that the temp_air column was not correctly aligned. This has now been fixed and below are given plots of the data to demonstrate that all values are correctly aligned to UTC time.
+
+**PV Power vs all OpenNEM data**:
+![](imgs/pv_power_vs_opennem.png)
+
+**PV Power vs all other solcast data**:
+![](imgs/pv_power_vs_solcast.png)
+
+Note that the solar peaks are always just after midnight, UTC, which means around midday in UTC+10.
+
 ## Tariffs Added to Battery Simulation
 
 In production we have replaced the old `bot/evaluation.py` with a new file given in this repo: `tariff_evaluation.py`. The new simulator is almost identical to the old one except that a percentage tariff (usually negative but sometimes positive) is applied to each profit or loss made by the battery. In practical terms this means you will probably notice a ~10% decrease in your score on the leaderboard.
