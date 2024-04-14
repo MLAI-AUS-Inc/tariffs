@@ -42,9 +42,9 @@ Note that the solar peaks are always just after midnight, UTC, which means aroun
 
 ## Tariffs Added to Battery Simulation
 
-In production we have replaced the old `bot/evaluation.py` with a new file given in this repo: `tariff_evaluation.py`. The new simulator is almost identical to the old one except that a percentage tariff (usually negative but sometimes positive) is applied to each profit or loss made by the battery. In practical terms this means you will probably notice a ~10% decrease in your score on the leaderboard.
+In production we have replaced the old `bot/evaluation.py` with a new file given in this repo: `tariff_environment.py`. The new simulator is almost identical to the old one except that a percentage tariff (usually negative but sometimes positive) is applied to each profit or loss made by the battery. In practical terms this means you will probably notice a ~10% decrease in your score on the leaderboard.
 
-**You do not need to do anything to your code to account for this change.** The change has been made on the backend and is now in place. All submissions since 11/4/2024 1800 AEST have been made using the new simulator, as will all future submissions beyond this date. That said, we do encourage you to download `tariff_evaluation.py` and use it to test your policies locally as this is what you will be evaluated against. Downloading this file and saving it in your repo as `bot/tariff_evaluation.py` will not effect your submissions in any way and you are free to alter this file as you see fit. The usual restrictions around not altering `bot/evaluation.py` still apply.
+**You do not need to do anything to your code to account for this change.** The change has been made on the backend and is now in place. All submissions since 11/4/2024 1800 AEST have been made using the new simulator, as will all future submissions beyond this date. That said, we do encourage you to download `tariff_environment.py` and use it to test your policies locally as this is what you will be evaluated against. Downloading this file and saving it in your repo as `bot/tariff_environment.py` will not effect your submissions in any way and you are free to alter this file as you see fit. The usual restrictions around not altering `bot/evaluation.py` still apply.
 
 ### Exact tariff algorithm: 
 
@@ -77,7 +77,7 @@ If you are importing, whatever profit or loss you were going to make, you also m
 - profit or $100 -> profit of $60
 - loss of $100 -> loss of $140
 ```
-The code from `tariff_evaluation.py` that implements this is:
+The code from `tariff_environment.py` that implements this is:
 ```python
 
 def with_tariff(self, profit, is_export, timestamp):
